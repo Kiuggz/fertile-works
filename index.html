@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertile Works LTD - Premium Real Estate in Kenya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Fertile Works LTD</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Find Your Dream Property in Kenya</h2>
+            <form class="search-form">
+                <input type="text" placeholder="Location (e.g. Nairobi, Mombasa)">
+                <select>
+                    <option>Property Type</option>
+                    <option>Residential</option>
+                    <option>Commercial</option>
+                    <option>Land</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties" class="properties">
+        <div class="container">
+            <h2>Featured Properties</h2>
+            <p class="subtitle">Discover premium real estate across Kenya</p>
+            
+            <div class="property-grid">
+                <!-- Property 1 -->
+                <div class="property-card" data-property="westlands">
+                    <img src="https://via.placeholder.com/400x300?text=Luxury+Apartment" alt="Luxury Apartment in Westlands">
+                    <div class="property-info">
+                        <h3>Westlands Luxury Apartment</h3>
+                        <p class="price">KSh 25,000,000</p>
+                        <p><i class="location-icon">📍</i> Westlands, Nairobi</p>
+                        <ul class="features">
+                            <li>4 Bedrooms</li>
+                            <li>3 Bathrooms</li>
+                            <li>250 sq.m</li>
+                        </ul>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Property 2 -->
+                <div class="property-card" data-property="nyali">
+                    <img src="https://via.placeholder.com/400x300?text=Beach+Villa" alt="Beach Villa in Nyali">
+                    <div class="property-info">
+                        <h3>Nyali Beachfront Villa</h3>
+                        <p class="price">KSh 45,000,000</p>
+                        <p><i class="location-icon">📍</i> Nyali, Mombasa</p>
+                        <ul class="features">
+                            <li>5 Bedrooms</li>
+                            <li>4 Bathrooms</li>
+                            <li>400 sq.m</li>
+                        </ul>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>About Fertile Works LTD</h2>
+                    <p class="intro">Your trusted real estate partner in Kenya since 2010</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <h3>🇰🇪 Local Expertise</h3>
+                            <p>Deep understanding of Kenyan property markets across all 47 counties</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <h3>🏆 Award-Winning</h3>
+                            <p>Recipient of 2023 Kenya Property Awards for customer service</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Our Nairobi Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Our Kenyan Offices</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h3>Send Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone (e.g. +2547...)" pattern="[+]{1}[0-9]{11,14}" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="office">
+                        <h4>📌 Nairobi Headquarters</h4>
+                        <p>Ushuru Pension Plaza, 6th Floor<br>Westlands Road, Nairobi</p>
+                        <p>📞 +254 113 405 388</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Modal -->
+    <div class="modal" id="propertyModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-images">
+                    <img id="modalMainImage" src="" alt="Property Image">
+                    <div class="thumbnail-container" id="thumbnails"></div>
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-price" id="modalPrice"></p>
+                    <p class="modal-location" id="modalLocation"></p>
+                    
+                    <div class="details-grid">
+                        <div>
+                            <h4>📐 Size</h4>
+                            <p id="modalSize"></p>
+                        </div>
+                        <div>
+                            <h4>🛏️ Bedrooms</h4>
+                            <p id="modalBedrooms"></p>
+                        </div>
+                        <div>
+                            <h4>🚿 Bathrooms</h4>
+                            <p id="modalBathrooms"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="kenyan-features">
+                        <h3>Kenyan-Specific Features</h3>
+                        <ul id="modalKenyanFeatures"></ul>
+                    </div>
+                    
+                    <button class="btn whatsapp-btn">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" width="20" alt="WhatsApp">
+                        Contact via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
