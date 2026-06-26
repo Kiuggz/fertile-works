@@ -32,7 +32,7 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ContactForm } from '../types/property';
 import { useToast } from '@/hooks/use-toast';
-import { supabase } from '../lib/supabase';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -45,6 +45,19 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Graceful degradation: the messaging backend (Supabase Edge Function) is
+    // not wired up yet. Point the user at the direct contact channels instead
+    // of failing a network call.
+    if (!isSupabaseConfigured) {
+      toast({
+        title: "Contact form not connected yet",
+        description:
+          "Please reach us directly on +254 113 405 388 or fertileworkslimited@gmail.com and we'll respond within 24 hours.",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
