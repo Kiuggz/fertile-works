@@ -1,0 +1,19 @@
+{
+  // Cloudflare Workers static-assets config for the Fertile Works SPA.
+  //
+  // The project is deployed via Workers Builds (`npx wrangler deploy`). Without
+  // this file, wrangler auto-detects the Vite framework and requires Vite >= 6.
+  // Declaring an assets-only Worker here bypasses that auto-detection: wrangler
+  // simply uploads the pre-built `dist/` directory produced by `npm run build`.
+  //
+  // not_found_handling = "single-page-application" serves index.html for any
+  // unmatched path, so client-side routes (Phase C: /tenant-login, /portal/*)
+  // resolve correctly on direct navigation / refresh.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fertile-works",
+  "compatibility_date": "2026-06-26",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
