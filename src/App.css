@@ -1,0 +1,8 @@
+/* App-level styles.
+ *
+ * Vite scaffold styles (#root max-width, logo spin, etc.) were removed in
+ * Phase A — they constrained the layout and broke the full-width marketing
+ * site. Global design tokens live in src/index.css; component styling is
+ * handled with Tailwind utility classes. Add app-level overrides here only
+ * when a Tailwind utility is genuinely insufficient.
+ */
